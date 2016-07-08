@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EuRo CV</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+  <nav class="navbar-default navbar-fixed-top">
+  <?php include "meniu.php"; ?>
+  </nav>
+
+  <div class="jumbotron">
+  <div class="container">
+  <h1>Despre noi</h1>
+  </div><!-- END container -->
+  </div><!-- END jumbotron -->
+
+  <div class="container">
+     <blockquote>
+     <table class="container_contents" align="center" border="0">
+     <h1>Cine suntem si de ce am creat <i>EuRoCV.ro</i></h1>
+     <br></br>
+     <td colspan="3" align="left">
+	 <p>Site-ul <i>EuRoCV</i> se adreseaza tuturor persoanelor care doresc sa vizualizele modele de CV-uri.</p>
+	 <p>Acest site a fost creat din dorinta de a oferi un sprijin persoanelor care doresc sa isi creeze propriile CV-uri.</p>
+	 <p>Site-ul este sustinut de firma <a href="http://www.tekkie.ro/">Tekkie Consulting</a>, firma de productie de software.</p>
+	 <p>Echipa EuRoCV.ro a ales respectul egal pentru toate opiniile si incurajarea diversitatii acestora si a creativitatii. Echipa EuRoCV.ro este aici doar pentru a se ocupa de partea tehnica si nu ne vom implica in nici un fel in discutiile purtate pe </p>
+	 <p>Societatea <a href="http://www.tekkie.ro/">Tekkie Consulting</a> a fost infiintata in anul 2011 avand ca obiect principal de activitate productia de software.</p>
+     <p>La momentul actual societatea are in dezvoltare mai multe proiecte, site-ul EuRoCV.ro fiind unul dintre ele.</p>
+     <p>Echipa ce se ocupa de site-ul EuRoCV.ro va recomanda sa folositi sectiunea <i>Contact</i> pentru orice sugestii sau nelamuriri.</p>
+     <br></br>
+
+     <tr>
+      <td align="right">
+      <p>
+        <i>Echipa EuRoCV.ro</i>
+      </p>
+      </td>
+    </tr>
+
+     </blockquote>   
+  </div><!-- END container -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
+</html>
