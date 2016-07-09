@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>EuRo CV</title>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+<nav class="navbar-default navbar-fixed-top">
+<?php include "meniu.php"; ?>
+</nav>
+<div class="jumbotron">
+<div class="container">
+<h1>Contact</h1>
+</div><!--END container -->
+</div><!--END jumbotron -->
+<div class="container">
+	<div class="row marketing">
+		<div class="col-lg-6">
+      <blockquote>
+      <form method="post" action="sendeail.php">
+
+	<?php
+	$ipi = getenv("REMOTE_ADDR");
+	$httprefi = getenv ("HTTP_REFERER");
+	$httpagenti = getenv ("HTTP_USER_AGENT");
+	?>
+
+<input type="hidden" name="ip" value="<?php echo $ipi ?>" />
+<input type="hidden" name="httpref" value="<?php echo $httprefi ?>" />
+<input type="hidden" name="httpagent" value="<?php echo $httpagenti ?>" />
+
+Nume: <br />
+<input type="text" name="visitor" size="35" />
+<br />
+Email:<br />
+<input type="text" name="visitormail" size="35" />
+<br /> <br />
+<br />
+Grad:<br />
+<select name="attn" size="1">
+<option value=" Colonel ">Colonel </option>
+<option value=" Capitan ">Capitan </option>
+<option value=" General ">General </option>
+<option value=" Maresal ">Maresal </option>
+</select>
+<br /><br />
+Mesaj:
+<br />
+<textarea name="notes" rows="4" cols="40"></textarea>
+<br />
+<input type="submit" value="Trimite mesaj" />
+<br />
+</form>
+ </blockquote>  
+</div><!--END col-lg-6-->
+<div class="col-lg-6">
+<blockquote>
+
+	<h3> Echipa site-ului: </h3>
+	<br>
+	Studenti: <br>Preda Alexandru <br>
+    			  Nutiu Gabriel Florin<br>
+	<br>Telefon: <br>0726644661<br>
+				     0785552910<br>
+	<br>E-mail: <br><a href="mailto:alexpreda95@yahoo.com">alexpreda95@yahoo.com</a><br>
+	<a href="mailto:gabrielnutiu@yahoo.com">gabrielnutiu@yahoo.com</a><br>
+	<br><br><br><br><br><br><br>
+			
+</blockquote>
+</div><!--END col-lg-6-->
+</div><!--END row marketing -->
+</div>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
+</html>
