@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Date CV</title>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<?php
+    $query = "SELECT informatii_personale.id_informatii,informatii_personale.prenume,experienta_profesionala.id_informatii, experienta_profesionala.functia_ocupata,informatii_personale.varsta,informatii_personale.telefon FROM informatii_personale INNER JOIN experienta_profesionala ON informatii_personale.id_informatii=experienta_profesionala.id_informatii";
+    $result = mysqli_query($conexiune, $query) or die (mysqli_error($conexiune));     
+      while ($row = mysqli_fetch_array($result))  {
+    $id=$row["id_informatii"];
+        echo "<div class='col-md-4'";
+        echo "<table rules=\'all\''>";
+         switch ($id) {
+    case 1:
+        echo " <img src='images/1.png' width='150' alt='profile' />";
+        break;
+    case 2:
+        echo " <img src='images/2.png' width='150' alt='profile' />";
+        break;
+    case 3:
+       echo " <img src='images/3.png' width='150' alt='profile' />"; 
+        break;
+    case 4:
+       echo " <img src='images/4.png' width='150' alt='profile' />"; 
+       break;
+    case 5:
+       echo " <img src='images/5.png' width='150' alt='profile' />"; 
+       break;
+    }
+        echo "<h3>".$row["prenume"]."</h3>";
+        echo "<p>".$row["functia_ocupata"]."</p>";
+        echo "<p>Varsta ".$row["varsta"]."</p>";
+        echo "<p> <img src='img/celphone.png' width='20' alt='celphone' />".$row["telefon"]."</p>";
+        echo '<td width=50><a href="date.php?id_informatii='.$row['id_informatii'].'"><b>Vizualizare</b></a></td></tr>';
+        echo "</table>";
+        echo "<br><br>";
+        echo "</div>";
+    }
+        
+ ?> 
+ <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ </body>
+</html>
