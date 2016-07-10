@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<?php include "connection2.php"; ?>
+<html lang="en">
+<head>
+<title>Vizualizare Cv-uri</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+  <nav class="navbar-default navbar-fixed-top">
+  <?php include "meniu.php"; ?>
+  </nav>
+  <div class="jumbotron">
+  <div class="container">
+  <h1>Vizualizare cv-uri</h1>
+  </div><!-- END container -->
+  </div><!-- END jumbotron -->  
+
+  <div class="container">
+    
+    <?php include "getfront.php"; ?>
+
+  </div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
+</html>
