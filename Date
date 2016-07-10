@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<?php include "connection2.php"; ?>
+<?php
+    $id_informatii = $_GET['id_informatii'];
+    ?>
+<html lang="en">
+<head>
+<title>EuRo CV</title>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+  <nav class="navbar-default navbar-fixed-top">
+  <?php include "meniu.php"; ?>
+  </nav>
+<div class="jumbotron">
+<div class="container">
+<h1>EuRo CV</h1>
+</div><!-- END container -->
+</div><!-- END jumbotron -->
+  <div class="container">
+<?php
+echo "<div class= 'row marketing'>";
+    $query = "SELECT * FROM informatii_personale Where id_informatii=$id_informatii";
+    $result = mysqli_query($conexiune, $query) or die (mysqli_error($conexiune));     
+      while ($row = mysqli_fetch_array($result))  {
+       echo "<div class='col-lg-6'>";
+        echo "<table rules=\'all\''>";
+        switch ($id_informatii) {
+    case 1:
+        echo " <img src='images/1.png' width='150' alt='profile' />";
+        break;
+    case 2:
+        echo " <img src='images/2.png' width='150' alt='profile' />";
+        break;
+    case 3:
+       echo " <img src='images/3.png' width='150' alt='profile' />"; 
+        break;
+    case 4:
+       echo " <img src='images/4.png' width='150' alt='profile' />"; 
+       break;
+    case 5:
+       echo " <img src='images/5.png' width='150' alt='profile' />"; 
+       break;
+    }
+        echo "<h3>".$row["prenume"]."</h3>";
+        echo "<p>".$row["email"]."</p>";
+        echo "<p> <img src='img/celphone.png' width='20' alt='celphone' />".$row["telefon"]."</p>";
+        echo "</table>";
+        echo "</div>";
+
+        
+         echo "<div class='col-lg-6'>";
+        echo "<table rules=\'all\''>";
+        echo "<h3>".$row["nume"]."</h3>";
+        echo "<p>".$row["data_nasterii"]."</p>";
+        echo "<p>Varsta ".$row["varsta"]."</p>";
+        echo "<p>".$row["nationalitate"]."</p>";
+        echo "<p>".$row["sex"]."</p>";
+        echo "</table>";
+        echo "</div>";
+    }
+
+    $query = "SELECT * FROM experienta_profesionala Where id_informatii=$id_informatii";
+    $result = mysqli_query($conexiune, $query) or die (mysqli_error($conexiune));     
+      while ($row = mysqli_fetch_array($result))  {
+        
+        echo "<div class='col-lg-6'>";
+        echo "<table rules=\'all\''>";
+        echo "<h3>".$row["functia_ocupata"]."</h3>";
+        echo "<p>".$row["data_incepere"]."</p>";
+        echo "<p>".$row["data_finalizare"]."</p>";
+        echo "</table>";
+        echo "</div>";
+
+          echo "<div class='col-lg-6'>";
+        echo "<table rules=\'all\''>";
+        echo "<h3>".$row["denumire_angajator"]."</h3>";
+        echo "<p>".$row["oras"]."</p>";
+        echo "<p>".$row["tara"]."</p>";
+        echo "</table>";
+        echo "</div>";
+      
+    }
+    $query = "SELECT * FROM educatie_formare Where id_informatii=$id_informatii";
+    $result = mysqli_query($conexiune, $query) or die (mysqli_error($conexiune));     
+      while ($row = mysqli_fetch_array($result))  {
+        
+        echo "<div class='col-lg-6'>";
+        echo "<table rules=\'all\''>";
+        echo "<h3>".$row["diploma_absolvire"]."</h3>";
+        echo "<p>".$row["data_incepere"].$row["data_finalizare"]."</p>";
+        echo "</table>";
+        echo "</div>";
+
+          echo "<div class='col-lg-6'>";
+        echo "<table rules=\'all\''>";
+        echo "<h3>".$row["nume_institutie"]."</h3>";
+        echo "</table>";
+        echo"<br>";echo"<br>";echo"<br>";echo"<br>";
+        echo "</div>";
+       
+    }
+
+    $query = "SELECT * FROM competente_personale Where id_informatii=$id_informatii";
+    $result = mysqli_query($conexiune, $query) or die (mysqli_error($conexiune));     
+      while ($row = mysqli_fetch_array($result))  {
+        
+        echo "<div class='col-lg-6'>";
+        echo "<table rules=\'all\''>";
+        echo "<h3>Competente Personale</h3>";
+        echo "<li>".$row["limba_materna"]."</li>";
+        echo "<li>".$row["limbi_straine"]."</li>";
+        echo "<li>".$row["competente_sociale"]."</li>";
+        echo "<li>".$row["competente_organizatorice"]."</li>";
+        echo "<li>".$row["competente_tehnice"]."</li>";
+        echo "<li>".$row["competente_utilizare_calculator"]."</li>";
+        echo "<li>".$row["alte_competente"]."</li>";
+        echo "<li>".$row["permis_conducere"]."</li>";
+        echo "</table>";
+        echo"<br><br>";
+        echo "</div>";
+
+        echo "<div class='col-lg-6'>";
+        echo "<table rules=\'all\''>";
+        echo "</table>";
+		echo "</div>";
+      
+    }
+  echo "</div>";    
+?> 
+
+</div><!--END container -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+</body>
+</html>
