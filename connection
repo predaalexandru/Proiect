@@ -1,8 +1,8 @@
-?php
+<?php
 $hostname = "localhost";
-$username = "dinalbar_student";
-$password = "the!pass4student";
-$bd = "dinalbar_starteam";
+$username = "your user";
+$password = "your password";
+$bd = "your databases";
 
 $conexiune = mysqli_connect($hostname,$username,$password)
 or die ("Eroare! Functia apelata da eroare, este posbil ca cei 3 parametrii sa fie completati eronat!");
